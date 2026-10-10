@@ -1,0 +1,236 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Join Today</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        body {
+            background: white;
+            color: #0f1419;
+        }
+
+        .x-page {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .x-main {
+    flex: 1;
+    display: grid;
+    grid-template-columns: 1.1fr 1fr;
+    align-items: center;
+    max-width: 1100px;
+    width: 100%;
+    margin: 0 auto;
+    padding: 20px 35px;
+    gap: 45px;
+}
+
+        .x-brand {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .x-logo {
+    width: min(240px, 100%);
+    height: auto;
+    fill: #0f1419;
+}
+
+        .x-content {
+            max-width: 400px;
+        }
+
+       .x-content h1 {
+    font-size: clamp(34px, 4vw, 48px);
+    line-height: 1.1;
+    margin-bottom: 18px;
+}
+
+       .x-content h2 {
+    font-size: 24px;
+    margin-bottom: 17px;
+}
+
+        .x-button {
+            display: block;
+            width: 100%;
+            border: 1px solid #cfd9de;
+            border-radius: 25px;
+            padding: 11px 16px;
+            margin: 10px 0;
+            background: white;
+            color: #0f1419;
+            font-weight: bold;
+            text-align: center;
+            text-decoration: none;
+            cursor: pointer;
+            font-size: 14px;
+        }
+
+        .x-button:hover {
+            background: #f4f7f8;
+        }
+
+        .x-button.black {
+            color: white;
+            background: #0f1419;
+            border-color: #0f1419;
+        }
+
+        .x-button.black:hover {
+            background: #272c30;
+        }
+
+        .x-or {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin: 12px 0;
+            font-size: 13px;
+        }
+
+        .x-or::before,
+        .x-or::after {
+            content: "";
+            flex: 1;
+            height: 1px;
+            background: #eff3f4;
+        }
+
+        .x-small {
+            color: #536471;
+            font-size: 11px;
+            line-height: 1.4;
+            margin: 12px 0 20px;
+        }
+
+        .x-small a {
+            color: #1d9bf0;
+        }
+
+        .x-account {
+            font-size: 15px;
+            margin-bottom: 10px;
+            font-weight: bold;
+        }
+
+        .x-footer {
+            padding: 20px 25px;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 12px 18px;
+        }
+
+        .x-footer a {
+            color: #536471;
+            font-size: 12px;
+            text-decoration: none;
+        }
+
+        .x-footer a:hover {
+            text-decoration: underline;
+        }
+
+        @media (max-width: 700px) {
+            .x-main {
+                grid-template-columns: 1fr;
+                gap: 35px;
+                padding: 35px 25px;
+            }
+
+            .x-logo {
+                width: 120px;
+            }
+
+            .x-content {
+                margin: auto;
+                width: 100%;
+            }
+
+            .x-content h1 {
+                font-size: 40px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <main class="x-page">
+        <section class="x-main">
+            <div class="x-brand" aria-label="X logo">
+                <svg class="x-logo" viewBox="0 0 24 24"
+                     role="img" aria-label="X">
+                    <path d="M18.9 2H22l-6.8 7.8L23.2 22h-6.3l-5-8.1L4.8 22H1.6l7.3-8.4L1.1 2h6.5l4.5 7.5L18.9 2zM17.8 19.8h1.7L6.5 4.1H4.7z"/>
+                </svg>
+            </div>
+
+            <div class="x-content">
+                <h1>Happening now</h1>
+                <h2>Join today.</h2>
+
+                <button class="x-button" type="button"
+                    onclick="demo('Google sign-up')">
+                    🌐 &nbsp; Sign up with Google
+                </button>
+
+                <button class="x-button" type="button"
+                    onclick="demo('Apple sign-up')">
+                    Sign up with Apple
+                </button>
+
+                <div class="x-or">OR</div>
+
+                <button class="x-button black" type="button"
+                    onclick="demo('Create account')">
+                    Create account
+                </button>
+
+                <p class="x-small">
+                    By signing up, you agree to the
+                    <a href="#terms">Terms of Service</a> and
+                    <a href="#privacy">Privacy Policy</a>,
+                    including <a href="#cookies">Cookie Use</a>.
+                </p>
+
+                <p class="x-account">Already have an account?</p>
+
+                <button class="x-button" type="button"
+                    onclick="demo('Sign in')">
+                    Sign in
+                </button>
+
+                <button class="x-button" type="button"
+                    onclick="demo('Grok')">
+                    Get Grok
+                </button>
+            </div>
+        </section>
+
+        <footer class="x-footer">
+            <a href="#about">About</a>
+            <a href="#download">Download the X app</a>
+            <a href="#help">Help Center</a>
+            <a href="#terms">Terms of Service</a>
+            <a href="#privacy">Privacy Policy</a>
+            <a href="#cookies">Cookie Policy</a>
+            <a href="#accessibility">Accessibility</a>
+            <a href="#blog">Blog</a>
+            <a href="#careers">Careers</a>
+            <a href="#settings">Settings</a>
+            <a href="#copyright">© 2026 X Corp.</a>
+        </footer>
+    </main>
+
+    <script>
+        function demo(action) {
+            alert(action + " is a demonstration button.");
+        }
+    </script>
+</body>
+</html>

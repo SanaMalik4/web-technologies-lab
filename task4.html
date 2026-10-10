@@ -1,0 +1,419 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CUONLINE Faculty Portal - Registration</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background-color: #1a2245; /* Portal deep navy background */
+            color: #ffffff;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 10px 15px;
+        }
+
+        /* Compact Header */
+        .portal-header {
+            text-align: center;
+            margin-bottom: 8px;
+        }
+
+        .portal-header h1 {
+            font-size: 20px;
+            font-weight: bold;
+            letter-spacing: 1.2px;
+            color: #ffffff;
+            line-height: 1.1;
+        }
+
+        .portal-header .sub-brand {
+            font-size: 14px;
+            font-weight: bold;
+            color: #00a896;
+            letter-spacing: 0.8px;
+        }
+
+        .portal-header .version {
+            font-size: 11px;
+            color: #cbd5e1;
+            margin-bottom: 3px;
+        }
+
+        .portal-header h2 {
+            font-size: 16px;
+            font-weight: bold;
+            color: #ffffff;
+        }
+
+        /* 2-Column Policy Box */
+        .policy-box {
+            max-width: 780px;
+            width: 100%;
+            background-color: #c9e6f2;
+            color: #17426b;
+            padding: 8px 14px;
+            border-radius: 4px;
+            font-size: 11px;
+            line-height: 1.35;
+            margin-bottom: 10px;
+        }
+
+        .policy-box h3 {
+            font-size: 11.5px;
+            font-weight: bold;
+            color: #133c63;
+            margin-bottom: 3px;
+        }
+
+        .policy-box ul {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2px 14px;
+            padding-left: 16px;
+        }
+
+        .policy-box .warning-text {
+            color: #d93829;
+            font-weight: bold;
+        }
+
+        /* Compact Main Form Box */
+        .registration-container {
+            max-width: 780px;
+            width: 100%;
+            background: #ffffff;
+            color: #2c3e50;
+            border-radius: 4px;
+            display: flex;
+            overflow: hidden;
+            box-shadow: 0 4px 18px rgba(0, 0, 0, 0.35);
+            margin-bottom: 8px;
+        }
+
+        /* Left Side Teal Banner */
+        .side-banner {
+            width: 16%;
+            background: #00a896;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 10px;
+        }
+
+        .side-icon {
+            width: 52px;
+            height: 52px;
+            background: #ffffff;
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .side-icon svg {
+            width: 32px;
+            height: 32px;
+            fill: #00a896;
+        }
+
+        /* Form Content Container */
+        .form-content {
+            width: 84%;
+            padding: 12px 18px;
+        }
+
+        .form-row {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 7px;
+        }
+
+        .field {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+        }
+
+        label {
+            font-size: 11.5px;
+            font-weight: bold;
+            color: #24292e;
+            margin-bottom: 2px;
+        }
+
+        /* Yellowish Tint Input Styling */
+        input:not([type="radio"]):not([type="checkbox"]):not([type="file"]),
+        select,
+        textarea {
+            width: 100%;
+            padding: 5px 8px;
+            font-size: 12px;
+            background-color: #fdfde0;
+            border: 1px solid #dcdca8;
+            border-radius: 3px;
+            color: #333333;
+            outline: none;
+            font-family: inherit;
+        }
+
+        input:not([type="radio"]):not([type="checkbox"]):not([type="file"]):focus,
+        select:focus,
+        textarea:focus {
+            background-color: #ffffff;
+            border-color: #00a896;
+        }
+
+        input[type="file"] {
+            font-size: 11px;
+            color: #333;
+        }
+
+        textarea {
+            resize: none;
+        }
+
+        /* Compact Options Row */
+        .compact-group {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-size: 11.5px;
+            background: #fdfdfd;
+            border: 1px solid #e2e8f0;
+            border-radius: 3px;
+            padding: 4px 8px;
+            margin-bottom: 7px;
+        }
+
+        .compact-group .group-title {
+            font-weight: bold;
+            color: #24292e;
+            white-space: nowrap;
+        }
+
+        .compact-group label {
+            font-weight: normal;
+            font-size: 11.5px;
+            display: inline-flex;
+            align-items: center;
+            gap: 4px;
+            cursor: pointer;
+            margin: 0;
+        }
+
+        /* Buttons */
+        .btn-group {
+            display: flex;
+            justify-content: flex-end;
+            gap: 8px;
+            margin-top: 4px;
+        }
+
+        .btn-submit {
+            background-color: #1e293b;
+            color: #ffffff;
+            border: none;
+            padding: 6px 16px;
+            border-radius: 3px;
+            font-size: 12.5px;
+            font-weight: bold;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .btn-submit:hover {
+            background-color: #00a896;
+        }
+
+        .btn-submit span.icon-arrow {
+            display: inline-block;
+            background: #00a896;
+            color: white;
+            padding: 1px 5px;
+            border-radius: 2px;
+            font-size: 10px;
+        }
+
+        .btn-reset {
+            background-color: #e2e8f0;
+            color: #334155;
+            border: 1px solid #cbd5e1;
+            padding: 6px 12px;
+            border-radius: 3px;
+            font-size: 12.5px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        /* Links & Footer */
+        .portal-links {
+            text-align: center;
+            margin-top: 2px;
+            margin-bottom: 6px;
+        }
+
+        .portal-links a {
+            display: inline-block;
+            color: #ffffff;
+            text-decoration: none;
+            font-size: 11.5px;
+            font-weight: bold;
+            margin: 0 10px;
+        }
+
+        .portal-links a:hover {
+            text-decoration: underline;
+        }
+
+        footer {
+            font-size: 10.5px;
+            color: #94a3b8;
+            text-align: center;
+        }
+
+        footer span {
+            color: #38bdf8;
+        }
+    </style>
+</head>
+
+<body>
+
+    <header class="portal-header">
+        <h1>CUONLINE</h1>
+        <div class="sub-brand">FACULTY PORTAL</div>
+        <div class="version">Version 3.0</div>
+        <h2>Faculty Registration</h2>
+    </header>
+
+    <!-- 2-Column Policy Box -->
+    <div class="policy-box">
+        <h3>Password policy has been updated!</h3>
+        <ul>
+            <li>Minimum length of 8 characters.</li>
+            <li>Must contain uppercase (A-Z) & lowercase (a-z).</li>
+            <li>Must contain at least one digit (0-9).</li>
+            <li>Must contain special symbol (!@#$%^&*).</li>
+            <li><span class="warning-text">Do not</span> use name, sequence, or CUI/COMSATS.</li>
+            <li><span class="warning-text">Expires after 60-90 days.</span></li>
+        </ul>
+    </div>
+
+    <!-- Main Registration Box -->
+    <main class="registration-container">
+        <aside class="side-banner">
+            <div class="side-icon">
+                <svg viewBox="0 0 24 24">
+                    <path d="M10 17l5-5-5-5v3H3v4h7v3zm9-14H5c-1.1 0-2 .9-2 2v4h2V5h14v14H5v-4H3v4c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2z"/>
+                </svg>
+            </div>
+        </aside>
+
+        <section class="form-content">
+            <form id="task4Form">
+
+                <!-- Row 1: Name, Email, Password -->
+                <div class="form-row">
+                    <div class="field">
+                        <label for="name">Name *</label>
+                        <input type="text" id="name" name="name" placeholder="Full Name" required>
+                    </div>
+                    <div class="field">
+                        <label for="email">Email *</label>
+                        <input type="email" id="email" name="email" placeholder="Email" required>
+                    </div>
+                    <div class="field">
+                        <label for="password">Password *</label>
+                        <input type="password" id="password" name="password" minlength="8" placeholder="••••••••" required>
+                    </div>
+                </div>
+
+                <!-- Row 2: Country, Resume, Portfolio, Availability -->
+                <div class="form-row">
+                    <div class="field">
+                        <label for="country">Country *</label>
+                        <select id="country" name="country" required>
+                            <option value="">Select</option>
+                            <option value="Pakistan">Pakistan</option>
+                            <option value="United States">United States</option>
+                            <option value="United Kingdom">United Kingdom</option>
+                            <option value="Other">Other</option>
+                        </select>
+                    </div>
+                    <div class="field">
+                        <label for="resume">Resume (PDF only) *</label>
+                        <input type="file" id="resume" name="resume" accept=".pdf,application/pdf" required>
+                    </div>
+                    <div class="field">
+                        <label for="portfolio">Portfolio Link (URL)</label>
+                        <input type="url" id="portfolio" name="portfolio" placeholder="https://example.com">
+                    </div>
+                    <div class="field">
+                        <label for="availability">Availability *</label>
+                        <input type="date" id="availability" name="availability" required>
+                    </div>
+                </div>
+
+                <!-- Gender (Radio Buttons inline) -->
+                <div class="compact-group">
+                    <span class="group-title">Gender *:</span>
+                    <label><input type="radio" name="gender" value="Male" required> Male</label>
+                    <label><input type="radio" name="gender" value="Female"> Female</label>
+                    <label><input type="radio" name="gender" value="Other"> Other</label>
+                </div>
+
+                <!-- Skills (Checkboxes inline) -->
+                <div class="compact-group">
+                    <span class="group-title">Skills:</span>
+                    <label><input type="checkbox" name="skills" value="HTML"> HTML</label>
+                    <label><input type="checkbox" name="skills" value="CSS"> CSS</label>
+                    <label><input type="checkbox" name="skills" value="JavaScript"> JavaScript</label>
+                    <label><input type="checkbox" name="skills" value="Python"> Python</label>
+                    <label><input type="checkbox" name="skills" value="PHP"> PHP</label>
+                </div>
+
+                <!-- Cover Letter -->
+                <div class="form-row">
+                    <div class="field">
+                        <label for="coverletter">Cover Letter</label>
+                        <textarea id="coverletter" name="coverletter" rows="2" placeholder="Write a brief cover letter..."></textarea>
+                    </div>
+                </div>
+
+                <!-- Submit & Reset Buttons -->
+                <div class="btn-group">
+                    <button type="reset" class="btn-reset">Reset</button>
+                    <button type="submit" class="btn-submit">
+                        Submit <span class="icon-arrow">&#10140;</span>
+                    </button>
+                </div>
+
+            </form>
+        </section>
+    </main>
+
+    <div class="portal-links">
+        <a href="#">Forgot Password? Click Here</a>
+        <a href="#">For Contact or Feedback Click Here</a>
+    </div>
+
+    <footer>
+        Copyright 2018 | All Rights Reserved by <span>CUOnline CUI</span>
+    </footer>
+
+</body>
+</html>

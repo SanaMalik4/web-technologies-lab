@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Web Development Agency</title>
+    <!-- Google Font: Poppins -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #4b3d7b;
+            color: #ffffff;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            overflow-x: hidden;
+            position: relative;
+        }
+
+        /* Abstract swirl background accents */
+        .bg-wave {
+            position: absolute;
+            pointer-events: none;
+            z-index: 0;
+        }
+
+        .bg-wave-bottom-right {
+            bottom: -80px;
+            right: -60px;
+            width: 580px;
+            opacity: 0.22;
+        }
+
+        .bg-wave-bottom-left {
+            bottom: -60px;
+            left: -40px;
+            width: 280px;
+            opacity: 0.18;
+        }
+
+        /* Top Header */
+        header {
+            position: relative;
+            z-index: 10;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 38px 8% 10px 8%;
+        }
+
+        .logo-container {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+            text-decoration: none;
+            color: #ffffff;
+        }
+
+        .logo-icon {
+            width: 36px;
+            height: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .logo-text {
+            font-size: 20px;
+            font-weight: 700;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+        }
+
+        nav {
+            display: flex;
+            align-items: center;
+            gap: 36px;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: #d1c8ea;
+            font-size: 16px;
+            font-weight: 500;
+            transition: color 0.2s ease;
+        }
+
+        nav a:hover,
+        nav a.active {
+            color: #ffffff;
+        }
+
+        /* Hero Main Section */
+        .hero {
+            position: relative;
+            z-index: 10;
+            flex: 1;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 20px 8% 50px 8%;
+            gap: 40px;
+        }
+
+        .hero-content {
+            flex: 1;
+            max-width: 530px;
+        }
+
+        .hero-title {
+            font-size: clamp(40px, 5vw, 66px);
+            font-weight: 700;
+            line-height: 1.12;
+            color: #bbf2f6;
+            margin-bottom: 24px;
+            letter-spacing: -0.5px;
+        }
+
+        .hero-description {
+            font-size: clamp(17px, 1.8vw, 22px);
+            font-weight: 400;
+            line-height: 1.45;
+            color: #dfd8f5;
+            margin-bottom: 38px;
+            max-width: 440px;
+        }
+
+        .btn-learn {
+            display: inline-block;
+            background: #9de4ef;
+            color: #38415a;
+            font-size: 16px;
+            font-weight: 600;
+            padding: 14px 38px;
+            border-radius: 28px;
+            text-decoration: none;
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.16);
+            transition: all 0.25s ease;
+        }
+
+        .btn-learn:hover {
+            background: #bbf2f6;
+            transform: translateY(-2px);
+            box-shadow: 0 12px 28px rgba(0, 0, 0, 0.22);
+        }
+
+        /* Right Graphic / Image Container */
+        .hero-visual {
+            flex: 1.25;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .hero-visual img {
+            width: 100%;
+            max-width: 620px;
+            height: auto;
+            object-fit: contain;
+            filter: drop-shadow(0 16px 28px rgba(20, 14, 45, 0.4));
+        }
+
+        /* Mobile & Tablet Responsiveness */
+        @media (max-width: 960px) {
+            header {
+                padding: 25px 6%;
+            }
+
+            .hero {
+                flex-direction: column;
+                text-align: center;
+                padding: 30px 6% 60px 6%;
+            }
+
+            .hero-content {
+                max-width: 100%;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .hero-description {
+                max-width: 500px;
+            }
+
+            nav {
+                gap: 20px;
+            }
+        }
+
+        @media (max-width: 620px) {
+            header {
+                flex-direction: column;
+                gap: 16px;
+            }
+
+            nav {
+                flex-wrap: wrap;
+                justify-content: center;
+                gap: 15px;
+            }
+
+            nav a {
+                font-size: 14px;
+            }
+
+            .hero-title {
+                font-size: 36px;
+            }
+
+            .hero-description {
+                font-size: 16px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Background Swirl Wave Accents -->
+    <svg class="bg-wave bg-wave-bottom-right" viewBox="0 0 500 500" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M450,150 C400,20 200,80 180,220 C160,360 30,380 0,500 L500,500 L500,100 Z" fill="#ffffff" />
+        <path d="M380,240 C320,130 150,190 120,320 C90,450 20,470 0,500 L500,500 L500,220 Z" fill="#ffffff" opacity="0.4" />
+    </svg>
+
+    <svg class="bg-wave bg-wave-bottom-left" viewBox="0 0 300 300" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M0,180 C80,160 140,240 120,300 L0,300 Z" fill="#ffffff" />
+    </svg>
+
+    <!-- Header Section -->
+    <header>
+        <a href="#" class="logo-container">
+            <div class="logo-icon">
+                <svg viewBox="0 0 44 48" fill="none" xmlns="http://www.w3.org/2000/svg" width="36" height="40">
+                    <path d="M22 2L40 12V36L22 46L4 36V12L22 2Z" stroke="#bbf2f6" stroke-width="3" fill="none"/>
+                    <path d="M22 8L34 15V33L22 40L10 33V15L22 8Z" stroke="#bbf2f6" stroke-width="2.5" fill="none"/>
+                    <path d="M22 14V34M14 20L30 28M14 28L30 20" stroke="#bbf2f6" stroke-width="2.5" stroke-linecap="round"/>
+                </svg>
+            </div>
+            <span class="logo-text">LOGO NAME</span>
+        </a>
+
+        <nav>
+            <a href="#" class="active">Home</a>
+            <a href="#about">About</a>
+            <a href="#service">Service</a>
+            <a href="#portofolio">Portofolio</a>
+            <a href="#contact">Contact</a>
+        </nav>
+    </header>
+
+    <!-- Main Hero -->
+    <main class="hero">
+        <!-- Text & Action Button -->
+        <div class="hero-content">
+            <h1 class="hero-title">Web<br>Development<br>Agency</h1>
+            <p class="hero-description">We offer the best digital solutions for your business</p>
+            <a href="#learn-more" class="btn-learn">Learn More</a>
+        </div>
+
+        <!-- The Exact Illustration Artwork -->
+        <div class="hero-visual">
+            <!-- Save the original image as hero-art.png in the same directory as task3.html -->
+            <img src="images/hero-art.png" alt="Web Agency digital marketing illustration">
+        </div>
+    </main>
+
+</body>
+</html>

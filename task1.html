@@ -1,0 +1,298 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Campus Management System</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        body {
+            background:
+                linear-gradient(#15263a55, #15263a66),
+                url("images/COMSATS-PIC.jpg")
+                center / cover fixed;
+            min-height: 100vh;
+        }
+
+        .campus-page {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            padding: 38px 7% 18px;
+            background: #16233322;
+        }
+
+        .campus-panels {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 15px;
+            max-width: 1050px;
+            width: 100%;
+            margin: 0 auto;
+            flex: 1;
+            align-content: center;
+        }
+
+        .campus-panel {
+            background: #ffffffd9;
+            border-top: 3px solid #36a65b;
+            box-shadow: 0 4px 12px #0003;
+            text-align: center;
+            min-width: 0;
+        }
+
+        .login-panel {
+            padding: 20px;
+        }
+
+        .campus-logo {
+    display: block;
+    width: 100px;
+    height: 100px;
+    object-fit: contain;
+    margin: 0 auto 8px;
+    border: none;
+    border-radius: 0;
+    background: transparent;
+}
+        .campus-title {
+            color: #286eaf;
+            font-size: 25px;
+            line-height: 1.3;
+        }
+
+        .campus-subtitle {
+            color: #2878cb;
+            margin-bottom: 16px;
+        }
+
+        .login-heading {
+            border-top: 1px solid #ccc;
+            padding: 17px 0;
+            margin: 0 -20px 12px;
+        }
+
+        .campus-input {
+            width: 100%;
+            padding: 11px;
+            margin-bottom: 12px;
+            border: 1px solid #c3c9d0;
+            background: #ffffffb8;
+            font-size: 15px;
+        }
+
+        .campus-button {
+            width: 100%;
+            border: 0;
+            background: #269847;
+            color: white;
+            padding: 11px;
+            font-size: 15px;
+            cursor: pointer;
+        }
+
+        .campus-link {
+            display: inline-block;
+            color: #0879df;
+            margin-top: 10px;
+            text-decoration: none;
+        }
+
+        .campus-credit {
+            color: #278d42;
+            font-size: 12px;
+            margin-top: 14px;
+        }
+
+        .news-panel {
+            padding: 15px 20px;
+            max-height: 465px;
+            overflow-y: auto;
+        }
+
+        .news-title {
+            color: #286eaf;
+            font-size: 23px;
+            text-decoration: underline;
+            margin-bottom: 12px;
+        }
+
+        .news-item {
+            padding: 9px 0 15px;
+            border-top: 1px solid #ddd;
+        }
+
+        .news-date {
+            font-size: 11px;
+            color: #333;
+        }
+
+        .news-item h3 {
+            font-size: 15px;
+            font-weight: normal;
+            color: #0879df;
+            margin: 5px 0 8px;
+        }
+
+        .news-item p {
+            font-size: 13px;
+        }
+
+        .campus-footer {
+            max-width: 1050px;
+            width: 100%;
+            margin: 18px auto 0;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 12px 22px;
+        }
+
+        .campus-footer a {
+            color: white;
+            font-size: 13px;
+        }
+
+        .back-home {
+            text-align: center;
+            padding: 14px;
+        }
+
+        .back-home a {
+            color: white;
+        }
+
+        @media (max-width: 700px) {
+            .campus-panels {
+                grid-template-columns: 1fr;
+            }
+
+            .campus-page {
+                padding: 20px 14px;
+            }
+
+            .campus-title {
+                font-size: 21px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <main class="campus-page">
+        <section class="campus-panels">
+
+            <div class="campus-panel login-panel">
+                <img
+                    src="images/COMSATS-logo.png"
+                    alt="COMSATS University Islamabad logo"
+                    class="campus-logo">
+
+                <h1 class="campus-title">
+                    Campus Management System
+                    <small style="font-size: 12px;">v3.0</small>
+                </h1>
+
+                <p class="campus-subtitle">CUI Wah Campus</p>
+
+                <form id="campusLogin">
+                    <p class="login-heading">Sign in to start your session</p>
+
+                    <input class="campus-input"
+                           type="text"
+                           placeholder="Email/Username..."
+                           aria-label="Email or username"
+                           required>
+
+                    <input class="campus-input"
+                           type="password"
+                           placeholder="Password"
+                           aria-label="Password"
+                           required>
+
+                    <button class="campus-button" type="submit">
+                        Sign In
+                    </button>
+                </form>
+
+                <a class="campus-link" href="#forgot">
+                    Forgot your password?
+                </a>
+
+                <p class="campus-credit">Developed By IT Center CUI Wah</p>
+            </div>
+
+            <section class="campus-panel news-panel">
+                <h2 class="news-title">Campus News &amp; Events</h2>
+
+                <article class="news-item">
+                    <span class="news-date">Date: Sep 24, 2025</span>
+                    <h3>Workshop on LabVIEW for Engineers</h3>
+                    <p>
+                        The Departments of Electrical and Computer
+                        Engineering jointly organized a workshop.
+                        <a href="#workshop">read more...</a>
+                    </p>
+                </article>
+
+                <article class="news-item">
+                    <span class="news-date">Date: Sep 24, 2025</span>
+                    <h3>Seminar on "Entrepreneurial Challenges in Pakistan"</h3>
+                    <p>
+                        The Department of Management Sciences organized
+                        a seminar on entrepreneurship.
+                        <a href="#seminar">read more...</a>
+                    </p>
+                </article>
+
+                <article class="news-item">
+                    <span class="news-date">Date: Sep 22, 2025</span>
+                    <h3>ASHRAE NPL Officers Installation Ceremony</h3>
+                    <p>
+                        An installation ceremony was held at the campus.
+                        <a href="#ceremony">read more...</a>
+                    </p>
+                </article>
+
+                <article class="news-item">
+                    <span class="news-date">Date: Sep 18, 2025</span>
+                    <h3>Conference on Green Industrialization under CPEC</h3>
+                    <p>
+                        A conference focused on cooperation and
+                        sustainable development.
+                        <a href="#conference">read more...</a>
+                    </p>
+                </article>
+            </section>
+
+        </section>
+
+        <nav class="campus-footer" aria-label="University links">
+            <a href="#main">Main Website</a>
+            <a href="#cdc">CDC</a>
+            <a href="#ssbc">SSBC</a>
+            <a href="#oric">ORIC</a>
+            <a href="#portal">Portal</a>
+            <a href="#archive">Students' Archive</a>
+            <a href="#payroll">Payroll</a>
+            <a href="#energy">Energy Auditing App</a>
+            <a href="#online">CU-Online</a>
+            <a href="#office">Office 365</a>
+            <a href="#news">News Feed</a>
+        </nav>
+
+        <div class="back-home">
+            <a href="index.html">← Back to Lab Task 3 Home</a>
+        </div>
+    </main>
+
+    <script>
+        document.getElementById("campusLogin").addEventListener(
+            "submit", function(event) {
+                event.preventDefault();
+                alert("Demo login form: no account has been signed in.");
+            }
+        );
+    </script>
+</body>
+</html>
